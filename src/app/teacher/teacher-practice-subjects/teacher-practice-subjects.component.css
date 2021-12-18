@@ -1,0 +1,9 @@
+.main-container {
+    display: flex;
+}
+
+.dashboard-container {
+    width: calc(100vw - 520px);
+    background: white;
+    min-height: 100vh;
+}

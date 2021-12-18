@@ -1,0 +1,87 @@
+<div class="main-container">
+    <app-teacher-left-sidebar></app-teacher-left-sidebar>
+
+    <div class="dashboard-container" style="display: flex; flex-direction: column;padding:20px;padding-top: 0px;margin-top: -10px;">
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 35px;">
+
+            <div class="search-bar" style="justify-content: center; align-items: center;">
+
+                <nz-input-group [nzPrefix]="prefixIconSearch">
+                    <input type="text" nz-input placeholder="Search.." style="margin-left: 5px;" />
+                </nz-input-group>
+
+                <ng-template #prefixIconSearch>
+                    <i nz-icon nzType="search"></i>
+                </ng-template>
+
+            </div>
+
+            <div class="lang-dropdown">
+                <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
+                    English
+                    <i nz-icon nzType="down"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item>English</li>
+                    <li nz-menu-item>Hindi</li>
+                    <li nz-menu-item>Tamil</li>
+                </ul>
+                </nz-dropdown-menu>
+            </div>
+
+        </div>
+
+        <div style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 20px;line-height: 23px;letter-spacing: 0.02em;color: #111111; padding-top: 30px; padding-bottom: 15px;">Doubts</div>
+
+        <div style="display: flex; flex-direction: row;">
+            
+            <div style="font-style: normal;font-weight: 600;font-size: 13px;letter-spacing: 0.1em;text-transform: uppercase;color: #9E9E9E;">
+                3 Doubts in total
+            </div>
+            
+        </div>
+
+        <div style="margin-top: 25px;">
+            <div nz-row [nzGutter]="[24, 24]">
+
+                <div nz-col nzSpan="24">
+
+                    <nz-table #basicTable [nzData]="listOfData">
+                        <thead>
+                          <tr>
+                            <th>Course</th>
+                            <th>Board</th>
+                            <th>Subject</th>
+                            <th>Chapter</th>
+                            <th>Lesson</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let data of basicTable.data">
+                            <td>{{ data.course }}</td>
+                            <td>{{ data.board }}</td>
+                            <td>{{ data.subject }}</td>
+                            <td>{{ data.chapter }}</td>
+                            <td>{{ data.lesson }}</td>
+                            <td>
+                              <a class="tablecta">View</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </nz-table>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    
+    <app-teacher-right-sidebar></app-teacher-right-sidebar>
+    
+</div>
+

@@ -1,0 +1,157 @@
+
+
+<div class="main-container">
+
+    <div class="profile-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;padding-top: 20px;">
+
+        <div class="profile-pic" style="height: 100px; width: 100px; border-radius: 99px;">
+            <img src="assets/Profile-avatar.png" alt="">
+        </div>
+        <div >
+
+        </div>
+
+        <div class="username" style="font-family: Poppins; font-weight: 600; font-size:16px; line-height: 18px; letter-spacing: 0.04em; color: #0036DF; opacity: 0.35; padding-top: 15px;">Hello Rosalie</div>
+
+        <div class="user-email" style="font-family: Poppins;font-style: normal; font-weight: 600;font-size: 12px;line-height: 13px; letter-spacing: 0.04em; color: #5C5C5C; opacity: 0.35; padding-top: 15px;">rosalie.rice@gmail.com</div>
+
+        <div class="tiles-container" style="padding-top: 40px; display: flex; flex-direction: column;">
+            <div style="display: flex; flex-direction: row;">
+
+                <div class="dashboard" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1.5px solid #C2C9D7; border-top-left-radius: 10px; height: 110px; width: 110px;position: relative;">
+
+                <div *ngIf="true" style="background: white;border-radius: 10px;width: 100%;height: 100%;position: absolute;z-index: 1;transform: scale(1.2);box-shadow: 0px 4px 20px 5px rgb(0 0 0 / 6%);">
+                </div>
+
+                <div style="position: relative;z-index: 2;">
+                    <svg [style.fill]="true ? 'rgba(67, 109, 253, 1)' : '#C2C9D7'" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 12.1667H9.83333V0.5H0.5V12.1667ZM0.5 21.5H9.83333V14.5H0.5V21.5ZM12.1667 21.5H21.5V9.83333H12.1667V21.5ZM12.1667 0.5V7.5H21.5V0.5H12.1667Z"/>
+                    </svg>
+                </div>
+
+                <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;position: relative;z-index: 2;"
+                [style.color]="true ? 'rgba(67, 109, 253, 1)' : '#C2C9D7'"
+                >Dashboard
+                </div>
+
+                </div>
+
+                <div cass="courses" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-top: 1.5px solid #C2C9D7; border-top-right-radius: 10px; border-right: 1.5px solid #C2C9D7;
+                border-bottom: 1.5px solid #C2C9D7; height: 110px; width: 110px;">
+                
+                    <div>
+                        <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.7498 0.083374H2.24984C1.0988 0.083374 0.166504 1.01567 0.166504 2.16671V18.8334C0.166504 19.9844 1.0988 20.9167 2.24984 20.9167H14.7498C15.9009 20.9167 16.8332 19.9844 16.8332 18.8334V2.16671C16.8332 1.01567 15.9009 0.083374 14.7498 0.083374ZM2.24984 2.16671H7.45817V10.5L4.854 8.93754L2.24984 10.5V2.16671Z" fill="#C2C9D7"/>
+                            </svg>
+                            
+                    </div>
+                
+                    <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;">Courses</div>
+
+                </div>
+
+            </div>
+
+            <div style="display: flex; flex-direction: row;">
+
+                <div class="dashboard" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1.5px solid #C2C9D7; border-top: none; height: 110px; width: 110px;">
+
+                <div>
+                    <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.76416 0.644429H5.69098V16.2593H0.76416V0.644936V0.644429ZM11.6447 1.86031L16.3078 0.267456L21.3546 15.0439L16.692 16.6378L11.6446 1.86031H11.6447ZM17.2183 10.6779C16.5661 10.9055 16.1066 11.5154 16.1066 12.2326C16.1066 13.14 16.8421 13.8756 17.7495 13.8756C17.9397 13.8756 18.1223 13.8433 18.2922 13.7838C18.9328 13.5598 19.3924 12.9502 19.3924 12.2331C19.3926 12.0482 19.3615 11.8646 19.3005 11.6901C19.0771 11.0492 18.4674 10.5892 17.7503 10.5892C17.5598 10.5892 17.3769 10.6217 17.2068 10.6814L17.2183 10.6779ZM13.5764 5.30296L13.9461 6.38751L17.328 5.23242L16.9572 4.14787L13.5764 5.30296ZM12.8054 3.04837L13.1767 4.13398L16.5576 2.97888L16.1868 1.89328L12.8055 3.04837H12.8054ZM6.40988 0.644429H11.3377V16.2593H6.40937V0.644936L6.40988 0.644429ZM8.83442 10.7901C7.92698 10.7901 7.19136 11.5258 7.19136 12.4332C7.19136 13.3406 7.92698 14.0763 8.83442 14.0763C9.74185 14.0763 10.4775 13.3406 10.4775 12.4332C10.4775 11.5258 9.74185 10.7901 8.83442 10.7901ZM7.12519 4.52638V5.67376H10.6981V4.52638H7.12519ZM7.12519 2.14507V3.29142H10.6981V2.14507H7.12519ZM3.1892 10.7901H3.18869C2.28142 10.7901 1.54589 11.5256 1.54589 12.4329C1.54589 13.3402 2.2814 14.0758 3.18869 14.0758C4.09597 14.0758 4.83149 13.3402 4.83149 12.4329C4.83149 11.5257 4.09599 10.7901 3.18869 10.7901H3.1892ZM1.47894 4.52638V5.67376H5.05186V4.52638H1.47841H1.47894ZM1.47894 2.14507V3.29142H5.05186V2.14507H1.47841H1.47894Z" fill="#C2C9D7"/>
+                        </svg>
+                        
+
+                </div>
+
+                <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;">Study Material</div>
+                </div>
+
+                <div cass="courses" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-top: 1.5px solid #C2C9D7; border-top: none; border-right: 1.5px solid #C2C9D7;
+                border-bottom: 1.5px solid #C2C9D7; height: 110px; width: 110px;">
+                
+                    <div>
+                        <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.73 4.4C4.125 4.4 3.63 3.905 3.63 3.3V1.1C3.63 0.495 4.125 0 4.73 0C5.335 0 5.83 0.495 5.83 1.1V3.3C5.83 3.905 5.335 4.4 4.73 4.4ZM4.73 4.4C4.125 4.4 3.63 3.905 3.63 3.3V1.1C3.63 0.495 4.125 0 4.73 0C5.335 0 5.83 0.495 5.83 1.1V3.3C5.83 3.905 5.335 4.4 4.73 4.4ZM12.43 4.4C11.825 4.4 11.33 3.905 11.33 3.3V1.1C11.33 0.495 11.825 0 12.43 0C13.035 0 13.53 0.495 13.53 1.1V3.3C13.53 3.905 13.035 4.4 12.43 4.4ZM12.43 4.4C11.825 4.4 11.33 3.905 11.33 3.3V1.1C11.33 0.495 11.825 0 12.43 0C13.035 0 13.53 0.495 13.53 1.1V3.3C13.53 3.905 13.035 4.4 12.43 4.4ZM16.06 2.2H13.97V3.3C13.97 4.147 13.277 4.84 12.43 4.84C11.583 4.84 10.89 4.147 10.89 3.3V2.2H6.27V3.3C6.27 4.147 5.577 4.84 4.73 4.84C3.883 4.84 3.19 4.147 3.19 3.3V2.2H1.1C0.495 2.2 0 2.695 0 3.3V20.9C0 21.505 0.495 22 1.1 22H16.06C16.665 22 17.16 21.505 17.16 20.9V3.3C17.16 2.695 16.665 2.2 16.06 2.2ZM13.783 13.431L6.413 18.491C6.32289 18.5548 6.21538 18.5893 6.105 18.59C6.03287 18.5909 5.96135 18.5767 5.89504 18.5482C5.82874 18.5198 5.76911 18.4778 5.72 18.425L3.3 16.005C3.08 15.785 3.08 15.444 3.3 15.224C3.52 15.004 3.861 15.004 4.081 15.224L6.182 17.325L13.178 12.529C13.2378 12.4873 13.3052 12.458 13.3765 12.4426C13.4477 12.4272 13.5213 12.4262 13.5929 12.4395C13.6645 12.4528 13.7328 12.4802 13.7938 12.5201C13.8547 12.56 13.9072 12.6117 13.948 12.672C14.124 12.925 14.036 13.266 13.783 13.431ZM13.42 10.78H3.74C3.377 10.78 3.08 10.483 3.08 10.12C3.08 9.757 3.377 9.46 3.74 9.46H13.42C13.783 9.46 14.08 9.757 14.08 10.12C14.08 10.483 13.783 10.78 13.42 10.78ZM13.42 8.14H3.74C3.377 8.14 3.08 7.843 3.08 7.48C3.08 7.117 3.377 6.82 3.74 6.82H13.42C13.783 6.82 14.08 7.117 14.08 7.48C14.08 7.843 13.783 8.14 13.42 8.14Z" fill="#C2C9D7"/>
+                            </svg>
+                            
+                            
+                    </div>
+                
+                    <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;">Practice</div>
+
+                </div>
+
+            </div>
+
+            <div style="display: flex; flex-direction: row;">
+
+                <div class="dashboard" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1.5px solid #C2C9D7; border-top: none; height: 110px; width: 110px;">
+
+                <div>
+                    
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.2188 0C12.0276 0 11.845 0.0761875 11.7099 0.209875C11.5747 0.343563 11.5 0.529 11.5 0.71875L11.5029 10.7841C11.5029 10.9753 11.5791 11.1579 11.7127 11.293C11.8464 11.4281 12.0319 11.5029 12.2216 11.5029L22.2812 11.5C22.678 11.5 23 11.178 23 10.7812C23 4.83575 18.1643 0 12.2188 0Z" fill="#C2C9D7"/>
+                        <path d="M21.2707 13.1847C21.2032 13.1072 21.1199 13.0451 21.0265 13.0025C20.933 12.9598 20.8315 12.9377 20.7288 12.9374H10.0625V2.2712C10.0625 2.06276 9.97194 1.86439 9.81525 1.72926C9.65856 1.59126 9.45012 1.52801 9.24312 1.55964C3.97325 2.30426 0 6.88557 0 12.2187C0 18.1642 4.83575 22.9999 10.7812 22.9999C16.1144 22.9999 20.6971 19.0253 21.4403 13.7554C21.4552 13.6537 21.4478 13.5499 21.4185 13.4513C21.3892 13.3528 21.3387 13.2618 21.2707 13.1847Z" fill="#C2C9D7"/>
+                        </svg>
+                                
+
+                </div>
+
+                <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;">Analytics</div>
+                </div>
+
+                <div cass="courses" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-top: 1.5px solid #C2C9D7; border-top: none; border-right: 1.5px solid #C2C9D7;
+                border-bottom: 1.5px solid #C2C9D7; height: 110px; width: 110px;">
+                
+                    <div>
+                        <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.49187 5.81254C13.8065 5.81254 17.3044 9.31046 17.3044 13.625C17.3044 17.9396 13.8065 21.4375 9.49187 21.4375C5.17677 21.4375 1.67937 17.9396 1.67937 13.625C1.67937 9.31046 5.17677 5.81254 9.49187 5.81254ZM9.21323 9.07504L9.16792 9.14796L8.15958 11.2855C8.12159 11.3673 8.05487 11.4324 7.97208 11.4683L7.88771 11.4922L5.63458 11.836C5.55523 11.8482 5.48236 11.887 5.42781 11.9459C5.37065 12.0083 5.33523 12.0875 5.32688 12.1718C5.31852 12.256 5.33767 12.3406 5.38146 12.4131L5.43406 12.4808L7.06427 14.1448C7.12798 14.2104 7.16637 14.2964 7.1726 14.3875L7.16844 14.4792L6.78354 16.8287C6.7702 16.9104 6.78296 16.9942 6.82 17.0683C6.85566 17.1427 6.91611 17.2025 6.99099 17.2373C7.06587 17.272 7.15051 17.2797 7.23042 17.2589L7.30802 17.2276L9.32365 16.1183C9.40114 16.0755 9.49207 16.0639 9.57781 16.086L9.65958 16.1188L11.6752 17.2276C11.7455 17.2662 11.8262 17.2797 11.9044 17.2651C11.9862 17.249 12.0603 17.2058 12.1147 17.1426C12.1691 17.0793 12.2007 16.9996 12.2044 16.9162L12.1992 16.8287L11.8153 14.4797C11.8002 14.3889 11.8175 14.2956 11.8643 14.2162L11.919 14.1448L13.5492 12.4808C13.6065 12.4217 13.6434 12.3457 13.6544 12.2641C13.6669 12.1811 13.6517 12.0963 13.6111 12.0229C13.5705 11.9494 13.5068 11.8914 13.4299 11.8579L13.3492 11.8355L11.0955 11.4922C11.0073 11.4785 10.9274 11.4322 10.8716 11.3625L10.8236 11.2855L9.81583 9.14848C9.78154 9.0747 9.72388 9.01429 9.65177 8.9766C9.57872 8.93902 9.4948 8.92829 9.41465 8.94628C9.33449 8.96428 9.26321 9.00985 9.21323 9.07504ZM6.02312 0.0833742C6.12513 0.0832835 6.22491 0.113145 6.31009 0.169254C6.39527 0.225363 6.4621 0.305249 6.50229 0.398999L8.19031 4.33962C6.4155 4.58646 4.74921 5.33879 3.39031 6.50681L0.948645 0.808895C0.914783 0.729663 0.901106 0.643267 0.908841 0.55745C0.916577 0.471633 0.945483 0.389075 0.992968 0.317176C1.04045 0.245276 1.10504 0.186281 1.18093 0.145477C1.25682 0.104673 1.34165 0.0833345 1.42781 0.0833742H6.02312ZM17.5559 0.0833742C17.6422 0.0832975 17.7271 0.104632 17.803 0.145465C17.879 0.186297 17.9436 0.245348 17.9911 0.317319C18.0386 0.38929 18.0675 0.471928 18.0752 0.557817C18.0828 0.643707 18.0691 0.730159 18.0351 0.809416L15.5924 6.50681C14.2336 5.33888 12.5675 4.58656 10.7929 4.33962L12.4815 0.398999C12.5216 0.305249 12.5885 0.225363 12.6737 0.169254C12.7588 0.113145 12.8586 0.0832835 12.9606 0.0833742H17.5559Z" fill="#C2C9D7"/>
+                            </svg>
+                            
+                            
+                            
+                    </div>
+                
+                    <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;">Leaderboard2</div>
+
+                </div>
+
+            </div>
+
+            <div style="display: flex; flex-direction: row;">
+
+                <div class="dashboard" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1.5px solid #C2C9D7; border-top: none; border-bottom-left-radius:10px; height: 110px; width: 110px;">
+
+                <div>
+                    
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.9884 22.0251C22.1423 17.5985 18.7246 14.0665 14.3227 12.9931C16.7258 11.9319 18.3999 9.55474 18.3999 6.79213C18.3999 3.04092 15.3134 0 11.5061 0C7.6987 0 4.61222 3.04092 4.61222 6.79213C4.61222 9.55474 6.28635 11.9319 8.68948 12.9931C4.29242 14.0653 0.877342 17.5907 0.0266169 22.0103C-0.178399 22.9438 0.868228 23 0.868228 23H22.144C22.1439 23 23.1166 23 22.9884 22.0251Z" fill="#C2C9D7"/>
+                        </svg>
+                        
+                                
+
+                </div>
+
+                <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;">Profile</div>
+                </div>
+
+                <div cass="courses" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-top: 1.5px solid #C2C9D7; border-top: none; border-right: 1.5px solid #C2C9D7;
+                border-bottom: 1.5px solid #C2C9D7; height: 110px; width: 110px; border-bottom-right-radius:10px;">
+                
+                    <div>
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.8891 0H11.1188V13.8891H13.8891V0ZM20.5554 3.05525L18.6103 5.0004C19.7392 5.89692 20.6504 7.03732 21.2758 8.33613C21.9012 9.63494 22.2245 11.0585 22.2215 12.5C22.2215 15.0784 21.1973 17.5511 19.3742 19.3743C17.551 21.1975 15.0783 22.2218 12.5 22.2218C9.92169 22.2218 7.44898 21.1975 5.62584 19.3743C3.8027 17.5511 2.77847 15.0784 2.77847 12.5C2.77547 11.0585 3.09878 9.63494 3.72418 8.33613C4.34958 7.03732 5.26084 5.89692 6.38966 5.0004L4.44456 3.05525C3.04423 4.1966 1.91795 5.63773 1.14876 7.27238C0.37958 8.90702 -0.0128806 10.6935 0.00032241 12.5C0.00032241 15.8152 1.31725 18.9946 3.66139 21.3388C6.00554 23.683 9.18488 25 12.5 25C15.8151 25 18.9945 23.683 21.3386 21.3388C23.6828 18.9946 24.9997 15.8152 24.9997 12.5C25.0129 10.6935 24.6204 8.90702 23.8512 7.27238C23.0821 5.63773 21.9558 4.1966 20.5554 3.05525Z" fill="#C2C9D7"/>
+                        </svg>
+                    </div>
+                
+                    <div style="font-family: Poppins; font-style: normal;font-weight: 500;font-size: 10px;line-height: 13px;letter-spacing: 0.6px; color: #C2C9D7; margin-top:10px;">Logout</div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,79 @@
+<div class="main-container">
+    <app-teacher-left-sidebar></app-teacher-left-sidebar>
+
+    <div class="dashboard-container" style="display: flex; flex-direction: column;padding:20px;padding-top: 0px;margin-top: -10px;">
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 35px;">
+
+            <div class="search-bar" style="justify-content: center; align-items: center;">
+
+                <nz-input-group [nzPrefix]="prefixIconSearch">
+                    <input type="text" nz-input placeholder="Search.." style="margin-left: 5px;" />
+                </nz-input-group>
+
+                <ng-template #prefixIconSearch>
+                    <i nz-icon nzType="search"></i>
+                </ng-template>
+
+            </div>
+
+            <div class="lang-dropdown">
+                <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
+                    English
+                    <i nz-icon nzType="down"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item>English</li>
+                    <li nz-menu-item>Hindi</li>
+                    <li nz-menu-item>Tamil</li>
+                </ul>
+                </nz-dropdown-menu>
+            </div>
+
+        </div>
+
+        <div style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 20px;line-height: 23px;letter-spacing: 0.02em;color: #111111; padding-top: 30px; padding-bottom: 15px;">Study Materials</div>
+
+        <div style="display: flex; flex-direction: row;">
+            <div routerLink="/teacher/dashboard" style="font-style: normal;font-weight: 600;font-size: 13px;letter-spacing: 0.1em;text-transform: uppercase;color: #9E9E9E; cursor: pointer;">Dashboard</div>
+
+            <div style="font-family: Poppins;font-style: normal;font-weight: 400;font-size: 14px;line-height: 16px;letter-spacing: 0.02em;color: #9DA0AB; padding-left: 10px;padding-right: 5px;">
+                <svg height="8" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.75132 8.98353C0.576081 8.98379 0.406254 8.93632 0.27132 8.84936C0.195376 8.80039 0.1326 8.74025 0.0865857 8.67238C0.0405717 8.60451 0.0122245 8.53025 0.00316757 8.45384C-0.00588933 8.37744 0.00452218 8.3004 0.0338055 8.22713C0.0630889 8.15386 0.110668 8.0858 0.17382 8.02686L3.53382 4.90019L0.29382 1.76769C0.231521 1.70803 0.184997 1.63937 0.156923 1.56567C0.128849 1.49197 0.119779 1.41469 0.130233 1.33825C0.140688 1.26182 0.17046 1.18775 0.217841 1.12029C0.265221 1.05284 0.329275 0.993331 0.40632 0.945193C0.483919 0.892089 0.574794 0.852032 0.67324 0.827539C0.771687 0.803045 0.875581 0.794643 0.978401 0.802859C1.08122 0.811075 1.18075 0.835733 1.27073 0.875284C1.36072 0.914835 1.43922 0.968426 1.50132 1.03269L5.12382 4.53269C5.23413 4.63707 5.29443 4.768 5.29443 4.90311C5.29443 5.03822 5.23413 5.16915 5.12382 5.27353L1.37382 8.77353C1.29858 8.84412 1.20301 8.89992 1.09485 8.93641C0.986692 8.9729 0.868999 8.98904 0.75132 8.98353Z" fill="#9DA0AB"/>
+                </svg>
+            </div>
+
+            <div style="font-style: normal;font-weight: 600;font-size: 13px;letter-spacing: 0.1em;text-transform: uppercase;color: #9E9E9E;">Study Materials</div>
+        </div>
+
+        <div style="margin-top: 25px;">
+            <div nz-row [nzGutter]="[24, 24]">
+
+                <div nz-col nzSpan="8" *ngFor="let course of courses;let i = index">
+                    <div 
+                    [class.mcard-yellow]="i%4 == 0" 
+                    [class.mcard-red]="i%4 == 1" 
+                    [class.mcard-green]="i%4 == 2" 
+                    [class.mcard-blue]="i%4 == 3" 
+                    [routerLink]="['/teacher/study-material-subjects']" [queryParams]="{ course_id: course.id}">
+                        <div class="mcard-header-section">
+                            <div class="mcard-title">{{course.course_name}}</div>
+                            <!-- <div class="mcard-tag">{{20}}%</div> -->
+                        </div>
+                        <div class="mcard-sub-title">{{course.lesson_count}} {{course.lesson_count==1 ? 'resource' : 'resources'}} uploaded.</div>
+                        <div class="mcard-sub-title-2">{{course.approved_lessons}} {{course.approved_lessons==1 ? 'resources' : 'resources'}} approved.</div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+    
+    <app-teacher-right-sidebar></app-teacher-right-sidebar>
+    
+</div>
+

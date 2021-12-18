@@ -1,0 +1,86 @@
+.header-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background: #162542;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.logo-details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 25px 40px;
+}
+
+.mail-details-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.mail-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.primary-btn {
+    background-color: #C24748;
+    color: white;
+    padding: 10px 15px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    width: max-content;
+    font-size: 12px;
+}
+
+.menu-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-top: 1px solid rgb(219, 219, 219);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.menu-item {
+    font-family: 'poppins';
+    font-size: 12px;
+    font-weight: 500;
+    color: #162542;
+    padding:0px 15px;
+    padding-bottom: 15px;
+}
+
+.menu-item.active {
+    color: #C24748;
+    border-bottom:2px solid #C24748;
+
+}
+
+.search-container{
+    align-items: center;
+}
+
+.search-bar-container {
+    padding-right: 20px;
+    border-right: 1px solid #162542;
+    margin-right: 10px;
+
+}
+

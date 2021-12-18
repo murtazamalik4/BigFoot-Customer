@@ -1,0 +1,260 @@
+<div class="main-container">
+    <app-teacher-left-sidebar></app-teacher-left-sidebar>
+
+    <div class="dashboard-container" style="display: flex; flex-direction: column;padding:20px;padding-top: 0px;margin-top: -10px;">
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 35px;">
+
+            <div class="search-bar" style="justify-content: center; align-items: center;">
+
+                <nz-input-group [nzPrefix]="prefixIconSearch">
+                    <input type="text" nz-input placeholder="Search.." style="margin-left: 5px;" />
+                </nz-input-group>
+
+                <ng-template #prefixIconSearch>
+                    <i nz-icon nzType="search"></i>
+                </ng-template>
+
+            </div>
+
+            <div class="lang-dropdown">
+                <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
+                    English
+                    <i nz-icon nzType="down"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item>English</li>
+                    <li nz-menu-item>Hindi</li>
+                    <li nz-menu-item>Tamil</li>
+                </ul>
+                </nz-dropdown-menu>
+            </div>
+
+        </div>
+
+        <div style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 20px;line-height: 23px;letter-spacing: 0.02em;color: #111111; padding-top: 30px; padding-bottom: 15px;">{{subject_name}}</div>
+
+        <div style="display: flex; flex-direction: row;">
+            <div routerLink="/teacher/study-materials" style="font-style: normal;font-weight: 600;font-size: 13px;letter-spacing: 0.1em;text-transform: uppercase;color: #9E9E9E; cursor: pointer;">Study Materials</div>
+
+            <div style="font-family: Poppins;font-style: normal;font-weight: 400;font-size: 14px;line-height: 16px;letter-spacing: 0.02em;color: #9DA0AB; padding-left: 10px;padding-right: 5px;">
+                <svg height="8" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.75132 8.98353C0.576081 8.98379 0.406254 8.93632 0.27132 8.84936C0.195376 8.80039 0.1326 8.74025 0.0865857 8.67238C0.0405717 8.60451 0.0122245 8.53025 0.00316757 8.45384C-0.00588933 8.37744 0.00452218 8.3004 0.0338055 8.22713C0.0630889 8.15386 0.110668 8.0858 0.17382 8.02686L3.53382 4.90019L0.29382 1.76769C0.231521 1.70803 0.184997 1.63937 0.156923 1.56567C0.128849 1.49197 0.119779 1.41469 0.130233 1.33825C0.140688 1.26182 0.17046 1.18775 0.217841 1.12029C0.265221 1.05284 0.329275 0.993331 0.40632 0.945193C0.483919 0.892089 0.574794 0.852032 0.67324 0.827539C0.771687 0.803045 0.875581 0.794643 0.978401 0.802859C1.08122 0.811075 1.18075 0.835733 1.27073 0.875284C1.36072 0.914835 1.43922 0.968426 1.50132 1.03269L5.12382 4.53269C5.23413 4.63707 5.29443 4.768 5.29443 4.90311C5.29443 5.03822 5.23413 5.16915 5.12382 5.27353L1.37382 8.77353C1.29858 8.84412 1.20301 8.89992 1.09485 8.93641C0.986692 8.9729 0.868999 8.98904 0.75132 8.98353Z" fill="#9DA0AB"/>
+                </svg>
+            </div>
+
+            <div routerLink="/teacher/study-material-subjects" [queryParams]="{course_id:course_id}" style="font-style: normal;font-weight: 600;font-size: 13px;letter-spacing: 0.1em;text-transform: uppercase;color: #9E9E9E; cursor: pointer;">{{course_name}} 
+                {{ board_name ? "("+board_name+")" :""  }}
+            </div>
+
+            <div style="font-family: Poppins;font-style: normal;font-weight: 400;font-size: 14px;line-height: 16px;letter-spacing: 0.02em;color: #9DA0AB; padding-left: 10px;padding-right: 5px;">
+                <svg height="8" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.75132 8.98353C0.576081 8.98379 0.406254 8.93632 0.27132 8.84936C0.195376 8.80039 0.1326 8.74025 0.0865857 8.67238C0.0405717 8.60451 0.0122245 8.53025 0.00316757 8.45384C-0.00588933 8.37744 0.00452218 8.3004 0.0338055 8.22713C0.0630889 8.15386 0.110668 8.0858 0.17382 8.02686L3.53382 4.90019L0.29382 1.76769C0.231521 1.70803 0.184997 1.63937 0.156923 1.56567C0.128849 1.49197 0.119779 1.41469 0.130233 1.33825C0.140688 1.26182 0.17046 1.18775 0.217841 1.12029C0.265221 1.05284 0.329275 0.993331 0.40632 0.945193C0.483919 0.892089 0.574794 0.852032 0.67324 0.827539C0.771687 0.803045 0.875581 0.794643 0.978401 0.802859C1.08122 0.811075 1.18075 0.835733 1.27073 0.875284C1.36072 0.914835 1.43922 0.968426 1.50132 1.03269L5.12382 4.53269C5.23413 4.63707 5.29443 4.768 5.29443 4.90311C5.29443 5.03822 5.23413 5.16915 5.12382 5.27353L1.37382 8.77353C1.29858 8.84412 1.20301 8.89992 1.09485 8.93641C0.986692 8.9729 0.868999 8.98904 0.75132 8.98353Z" fill="#9DA0AB"/>
+                </svg>
+            </div>
+
+            <div style="font-style: normal;font-weight: 600;font-size: 13px;letter-spacing: 0.1em;text-transform: uppercase;color: #9E9E9E;">{{subject_name}}</div>
+ 
+        </div>
+
+       
+         <div style="display: flex;margin-top: 20px;">
+            <div class="simple-card" style="margin-right: 20px;">
+                <div class="simple-card-heading">Total Resources</div>
+                <div class="simple-card-content">{{lesson_count}}</div>
+            </div>
+        </div>
+
+        <div class="lesson-name-btn-container">
+            <div class="lesson-name-container">
+                <div class="lesson-name" style="display: flex;">CHAPTER: 
+                    <div style="margin-left: 5px;color: #9E9E9E;">
+                        {{lesson_name}}
+                    </div>
+                </div>
+                <div class="change-btn" style="cursor: pointer;" nz-dropdown [nzTrigger]="'click'" [nzDropdownMenu]="menu1">(CHANGE)</div>
+                <nz-dropdown-menu #menu1="nzDropdownMenu">
+                    <ul nz-menu>
+                      <li *ngFor="let lesson of lessons" nz-menu-item>
+                          <a [routerLink]="['/teacher/course-lessons']" 
+                                    
+                          [queryParams]="{ course_id:lesson.course_id, subject_id:lesson.subject_id, lesson_id:lesson.id }">{{lesson.lesson_name}}</a>
+                        </li>
+                    </ul>
+                  </nz-dropdown-menu>
+            </div>
+
+        <div> 
+             <button nz-button nzType="primary" (click)="newLessonModal=true" style="margin-right: 20px;">
+                NEW STUDY MATERIAL MODULE
+            </button>
+            <nz-modal [(nzVisible)]="newLessonModal" [nzFooter]="null" (nzOnCancel)="newLessonModal=false">
+                <div class="input-group">
+                    <div class="input-label">Study Material Module Name</div>
+                    <input nz-input placeholder="Study Material Module Name" [(ngModel)]="lesson_module_name" />
+                </div>
+
+                <div style="min-height: 150px;">
+
+                </div>
+
+                <button nz-button nzType="primary" (click)="addNewLessonModule()" style="margin-right: 20px;">
+                    SAVE
+                </button>
+              </nz-modal>
+        </div>
+
+        </div>
+
+        
+        <div style="display: flex;margin-top: 00px;flex-direction: column;margin-bottom: 100px;">
+
+            <div *ngFor="let lesson_module of lesson_modules; let i = index;" class="Group9-uq5thy-16 iefGbQ">
+
+                <div class="Group7-uq5thy-17 kLOjxr">
+                  
+                  <div class="Rectangle8Stack-uq5thy-21 dQNtdi">
+                    <div class="Rectangle8-uq5thy-18 jMKShj" *ngIf="i+1!=lesson_modules.length" ></div>
+                    <div class="Rectangle3-uq5thy-19 eTRrXl">
+                        <span class="Style1-uq5thy-20 iJlwng">{{i+1}}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="LessonCard-uq5thy-24 cEvBJy">
+                    <div class="Rectangle6Stack-uq5thy-37 gmrHpm">
+                        <div class="Rectangle6-uq5thy-25 hcBqMg"></div>
+                        <div class="Rectangle5-uq5thy-26 kSUVJX"></div>
+                        <div class="Rectangle4-uq5thy-27 eOIWbU">
+    
+                        <div class="LessonTitleColumn-uq5thy-30 iDhDvq">
+                                <a id="lesson275"></a>
+                            
+                                <span class="LessonTitle-uq5thy-28 cyeREg">{{lesson_module.lesson_module_name}}</span>
+                                
+                                <div class="LessonDesc-uq5thy-29 jZEFfF" style="flex-wrap: wrap;margin-bottom: -10px;"
+                                [style.margin-bottom]="lesson_module.lesson_items.length==0 && '10px'"
+                                >
+
+                                    <div *ngIf="lesson_module.lesson_items.length==0" style="display: flex;justify-content: center;align-items: center;">
+                                        This module will not be visible to the students since it does not have any resources.
+                                    </div>
+    
+                                    <div *ngFor="let lesson_item of lesson_module.lesson_items" 
+                                    style="margin-right: 10px;cursor:pointer;margin-bottom: 10px;" 
+                                    (click)="editResourceModal=true;edit_lesson_item=lesson_item.id;resource_name=JSON.parse(lesson_item.lesson_item_content).resource_name;resouce_link=JSON.parse(lesson_item.lesson_item_content).resouce_link;"
+                                    >
+                                        <div *ngIf="lesson_item.lesson_item_type==5" style="position: relative;">
+                                            <div style="background: #EEF2FF;border-radius: 6px;padding: 10px;display: flex;justify-content: center;align-items: center;">
+                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M26.416 28.5012C25.843 28.5012 25.3789 28.0371 25.3789 27.4641C25.3789 26.891 25.843 26.427 26.416 26.427H26.7113C30.2621 26.427 32.6035 22.4859 32.6035 18.9492C32.6035 15.0645 29.2215 11.9355 25.3684 11.8547L24.6195 11.8371L24.398 11.1234C23.3258 7.66055 21.0125 5.62852 16.8887 5.62852C11.7453 5.62852 8.41953 9.43945 8.41953 14.4949L8.42656 14.5055L8.51094 15.4582L7.56875 15.6199C5.27305 16.0137 3.44492 18.3691 3.44492 20.9777C3.44492 23.9309 5.73359 26.4234 8.40195 26.4234H9.32305C9.8961 26.4234 10.3602 26.8875 10.3602 27.4605C10.3602 28.0336 9.8961 28.4977 9.32305 28.4977H8.40195C4.60859 28.4977 1.40234 25.0523 1.40234 20.9742C1.40234 17.6449 3.48359 14.7023 6.36641 13.7812C6.725 7.9875 10.9086 3.55078 16.8887 3.55078C21.5855 3.55078 24.6969 5.98359 26.1453 9.82266C30.8387 10.3324 34.5934 14.1609 34.5934 18.9492C34.5934 23.407 31.6016 28.3641 26.416 28.5012Z" fill="#1E7BE2"/>
+                                                    <path d="M17.9872 30.2167L21.3165 26.5429C21.6048 26.2406 22.0759 26.2406 22.3642 26.5429L22.6243 26.7503C22.9126 27.0527 22.9126 27.4148 22.6243 27.7171L18.7888 31.9253C18.7853 31.9324 18.7817 31.9359 18.7782 31.9429L18.5146 32.2171C18.3704 32.3683 18.1806 32.4457 17.9872 32.4421C17.7974 32.4421 17.604 32.3683 17.4599 32.2171L17.1962 31.9429C17.1927 31.9394 17.1892 31.9324 17.1856 31.9253L13.4415 27.7839C13.1497 27.4816 13.1497 26.9894 13.4415 26.6871L13.7017 26.5429C13.9899 26.2406 14.461 26.3039 14.7528 26.6062L17.9872 30.2167Z" fill="#1E7BE2"/>
+                                                    <path d="M17.998 17.5781C18.5711 17.5781 19.0352 18.0422 19.0352 18.6152V30.0305C19.0352 30.6035 18.5711 31.0676 17.998 31.0676C17.425 31.0676 16.9609 30.6035 16.9609 30.0305V18.6152C16.9609 18.0422 17.425 17.5781 17.998 17.5781Z" fill="#1E7BE2"/>
+                                                </svg>
+                                                 <div style="font-size: 13px;line-height: 19px;letter-spacing: 0.06em;color: #2C2C2C;margin-left: 10px;margin-right: 10px;">{{
+                                                    lesson_item.lesson_item_content && JSON.parse(lesson_item.lesson_item_content).resource_name
+                                                }}</div>   
+                                            </div>
+                                            <div *ngIf="lesson_item.lesson_item_status==0" style="position: absolute;top: -5px;right:-5px" nz-popover [nzPopoverContent]="contentTemplate" nzPopoverPlacement="topRight">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8Z" fill="#E8686B"/>
+                                                    <path d="M8 15C6.61553 15 5.26216 14.5895 4.11101 13.8203C2.95987 13.0511 2.06266 11.9579 1.53285 10.6788C1.00303 9.3997 0.86441 7.99224 1.13451 6.63437C1.4046 5.2765 2.07129 4.02922 3.05026 3.05026C4.02922 2.07129 5.2765 1.4046 6.63437 1.13451C7.99224 0.86441 9.3997 1.00303 10.6788 1.53285C11.9579 2.06266 13.0511 2.95987 13.8203 4.11101C14.5895 5.26216 15 6.61553 15 8C15 9.85652 14.2625 11.637 12.9497 12.9497C11.637 14.2625 9.85652 15 8 15ZM8 2C6.81332 2 5.65328 2.3519 4.66658 3.01119C3.67989 3.67047 2.91085 4.60755 2.45673 5.7039C2.0026 6.80026 1.88378 8.00666 2.11529 9.17054C2.3468 10.3344 2.91825 11.4035 3.75736 12.2426C4.59648 13.0818 5.66558 13.6532 6.82946 13.8847C7.99335 14.1162 9.19975 13.9974 10.2961 13.5433C11.3925 13.0892 12.3295 12.3201 12.9888 11.3334C13.6481 10.3467 14 9.18669 14 8C14 6.4087 13.3679 4.88258 12.2426 3.75736C11.1174 2.63214 9.5913 2 8 2Z" fill="white"/>
+                                                    <path d="M10.295 11L7.5 8.205V3.5H8.5V7.79L11 10.295L10.295 11Z" fill="white"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+
+                                    </div>  
+                                    <ng-template #contentTemplate>
+                                        <div style="font-weight: 600;font-size: 10px;letter-spacing: 1px;text-transform: uppercase;color: #474748;">Sent for approval</div>
+                                      </ng-template>
+                                    <div style="margin-left: auto;cursor: pointer;" 
+                                    (click)="edit_lesson_module_id=lesson_module.id;edit_lesson_module_count=lesson_module.lesson_items.length+1;newLessonTypeModal=true">
+                                        <svg width="45" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="1" y="1" width="50" height="50" rx="5" stroke="#E8686B" stroke-width="2"/>
+                                            <path d="M26 12C26.4641 12 26.9092 12.1844 27.2374 12.5126C27.5656 12.8408 27.75 13.2859 27.75 13.75V24.25H38.25C38.7141 24.25 39.1592 24.4344 39.4874 24.7626C39.8156 25.0908 40 25.5359 40 26C40 26.4641 39.8156 26.9092 39.4874 27.2374C39.1592 27.5656 38.7141 27.75 38.25 27.75H27.75V38.25C27.75 38.7141 27.5656 39.1592 27.2374 39.4874C26.9092 39.8156 26.4641 40 26 40C25.5359 40 25.0908 39.8156 24.7626 39.4874C24.4344 39.1592 24.25 38.7141 24.25 38.25V27.75H13.75C13.2859 27.75 12.8408 27.5656 12.5126 27.2374C12.1844 26.9092 12 26.4641 12 26C12 25.5359 12.1844 25.0908 12.5126 24.7626C12.8408 24.4344 13.2859 24.25 13.75 24.25H24.25V13.75C24.25 13.2859 24.4344 12.8408 24.7626 12.5126C25.0908 12.1844 25.5359 12 26 12V12Z" fill="#E8686B"/>
+                                        </svg>
+                                    </div>
+
+                                    <nz-modal nzClosable="false" [(nzVisible)]="newLessonTypeModal" [nzFooter]="null" (nzOnCancel)="newLessonTypeModal=false">
+                                        <div class="input-group">
+                                            <div class="input-label">Resource Name</div>
+                                            <input nz-input placeholder="Resource Name" [(ngModel)]="resource_name" />
+                                        </div>
+                        
+                                            <nz-upload
+                                                nzType="drag"
+                                                [nzName]="'image'"
+                                                nzAction="http://localhost:3333/api/teacher-course-lesson_single-upload-image2"
+                                                [nzData]="{course_id:course_id}"
+                                                (nzChange)="handleChangeResource($event)"
+                                            >
+                                                <p class="ant-upload-drag-icon">
+                                                <i nz-icon nzType="inbox"></i>
+                                                </p>
+                                                <p class="ant-upload-text">Click or drag file to this area to upload</p>
+                                            </nz-upload>
+                                      
+                        
+                                        <button nz-button nzType="primary" (click)="addNewLessonItem()" style="margin-top:20px;margin-right: 20px;">
+                                            SAVE
+                                        </button>
+                                      </nz-modal>
+
+                                      <nz-modal nzClosable="false" [(nzVisible)]="editResourceModal" [nzFooter]="null" (nzOnCancel)="editResourceModal=false">
+                                        <div class="input-group">
+                                            <div class="input-label">Resource Name</div>
+                                            <input nz-input placeholder="Resource Name" [(ngModel)]="resource_name" />
+                                        </div>
+                        
+                                            <nz-upload
+                                                nzType="drag"
+                                                [nzName]="'image'"
+                                                nzAction="http://localhost:3333/api/teacher-course-lesson_single-upload-image2"
+                                                [nzData]="{course_id:course_id}"
+                                                (nzChange)="handleChangeResource($event)"
+                                            >
+                                                <p class="ant-upload-drag-icon">
+                                                <i nz-icon nzType="inbox"></i>
+                                                </p>
+                                                <p class="ant-upload-text">Click or drag file to this area to change resource</p>
+                                            </nz-upload>
+
+                                            <a *ngIf="resouce_link" [href]="'https://vision2040assets.inkapps.io/'+resouce_link" target="_blank" style="font-family: 'Work Sans';
+                                            font-style: normal;font-weight: 600;font-size: 10px;line-height: 12px;letter-spacing: 0.1em;text-transform: uppercase;color: #436DFD;
+                                            margin-left: 10px;margin-top: 15px;margin-bottom: 25px;display: flex;">
+                                               Uploaded Resouce Link
+                                            </a>
+                                      
+                                        <div>
+                                            <button nz-button nzType="primary" (click)="updateLessonItem()" style="margin-top:20px;margin-right: 20px;">
+                                                SAVE
+                                            </button>
+                                            <button nz-button nzType="secondary" nzDanger (click)="deleteLessonItem()" style="margin-top:20px;margin-right: 20px;">
+                                                DELETE
+                                            </button>
+                                        </div>
+
+                                      </nz-modal>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+            </div>
+
+         
+        </div>
+       
+    </div>
+    
+</div>
+

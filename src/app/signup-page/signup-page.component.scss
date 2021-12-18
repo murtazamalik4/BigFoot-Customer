@@ -1,0 +1,15 @@
+.inner-content {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+    .inner-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .signUp-imgContainer {
+        display:none !important;
+    }
+}

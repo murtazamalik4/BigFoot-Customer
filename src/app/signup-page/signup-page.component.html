@@ -1,0 +1,105 @@
+<div class="main-container">
+  <div class="dark-film-container"></div>
+  <div class="img-container">
+    <img src="../../assets/trade-bg.png" alt="" style="width: 100%; height: auto;">
+  </div>
+
+  <div class="request-form-title-container">
+    New Booking Request Form
+   </div>
+
+  <div nz-row class="row-main">
+
+    <div nz-col nzXs="24" nzLg="18"  class="fields-container">
+      
+     <div class="fields-btns-container">
+      <div class="top-fields-container">
+
+        <div class="single-field">
+          <div class="field-label">
+            Request Type*
+          </div>
+          <div class="input-field">
+            <nz-cascader [nzOptions]="options"></nz-cascader>
+          </div>
+        </div>
+
+        <div class="single-field">
+          <div class="field-label">
+            Vehicle Make*
+          </div>
+          <div class="input-field">
+            <input nz-input placeholder="Enter the vehicle / Parts Brand name" [(ngModel)]="value" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="top-fields-container">
+
+        <div class="single-field">
+          <div class="field-label">
+            Vehicle Registration Number*
+          </div>
+          <div class="input-field">
+            <input nz-input placeholder="Enter the Vehicle Registration Number" [(ngModel)]="value" />
+          </div>
+        </div>
+
+        <div class="single-field">
+          <div class="field-label">
+            Vehicle Model*
+          </div>
+          <div class="input-field">
+            <input nz-input placeholder="Enter the Vehicle Model Number" [(ngModel)]="value" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="top-fields-container">
+
+        <div class="single-field">
+          <div class="field-label">
+            Remarks / Service Details*
+          </div>
+          <div class="input-field">
+            <textarea rows="4" nz-input [(ngModel)]="inputValue"></textarea> 
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="btns-container">
+        <div class="cofirm-btn">
+          Confirm Booking
+        </div>
+        <div class="cancel-btn">
+          Cancel
+        </div>
+      </div>
+
+     </div>
+    </div>
+
+    <div nz-col nzLg="6" nxXs="24" class="calender-container">
+      <div class="field-label">
+        Check in date
+      </div>
+      <div [ngStyle]="{ width: '300px', border: '1px solid #d9d9d9', borderRadius: '4px' }">
+        <nz-calendar
+          [nzFullscreen]="false"
+          (nzSelectChange)="onValueChange($event)"
+          (nzPanelChange)="onPanelChange($event)"
+        ></nz-calendar>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright-text-holder">
+    © 2021 BIGFOOT LOGISTIC PTE LTD
+  </div>
+
+
+</div>

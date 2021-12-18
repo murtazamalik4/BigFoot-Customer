@@ -1,0 +1,15 @@
+.main-container{
+    width:260px;
+    background-color: #F5F7F9;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.blue-chart {
+    width: 100%;
+    mix-blend-mode: multiply;
+}

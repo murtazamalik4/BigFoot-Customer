@@ -1,0 +1,74 @@
+<div class="main-container">
+    <app-teacher-left-sidebar></app-teacher-left-sidebar>
+
+    <div class="dashboard-container" style="display: flex; flex-direction: column;padding:20px;padding-top: 0px;margin-top: -10px;">
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 35px;">
+
+            <div class="search-bar" style="justify-content: center; align-items: center;">
+
+                <nz-input-group [nzPrefix]="prefixIconSearch">
+                    <input type="text" nz-input placeholder="Search.." style="margin-left: 5px;" />
+                </nz-input-group>
+
+                <ng-template #prefixIconSearch>
+                    <i nz-icon nzType="search"></i>
+                </ng-template>
+
+            </div>
+
+            <div class="lang-dropdown">
+                <button nz-button nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
+                    English
+                    <i nz-icon nzType="down"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item>English</li>
+                    <li nz-menu-item>Hindi</li>
+                    <li nz-menu-item>Tamil</li>
+                </ul>
+                </nz-dropdown-menu>
+            </div>
+
+        </div>
+
+        <div style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 20px;line-height: 23px;letter-spacing: 0.02em;color: #111111; padding-top: 30px; padding-bottom: 15px;margin-bottom: -25px;">Your Subjects</div>
+
+        <div *ngFor="let subject_group of subject_groups;let j = index" style="margin-top: 35px;">
+            <div style="font-style: normal;font-weight: 600;font-size: 13px;letter-spacing: 0.1em;text-transform: uppercase;color: #9E9E9E;">
+                {{subject_group.course_name}}
+            </div>
+           
+            <div style="margin-top: 15px;">
+                <div nz-row [nzGutter]="[24, 24]">
+    
+                    <div nz-col nzSpan="8" *ngFor="let subject of subject_group.subjects;let i = index">
+                        <div 
+                        [class.mcard-yellow]="i%4 == 0" 
+                        [class.mcard-red]="i%4 == 1" 
+                        [class.mcard-green]="i%4 == 2" 
+                        [class.mcard-blue]="i%4 == 3" 
+                        [routerLink]="['/teacher/course-lessons']" 
+                        [queryParams]="{ course_id: subject.course_id, subject_id: subject.id }">
+                            <div class="mcard-header-section">
+                                <div class="mcard-title">{{subject.subject_name}}</div>
+                                <!-- <div class="mcard-tag">20%</div> -->
+                            </div>
+                            <div class="mcard-sub-title">{{subject.lesson_count}} {{subject.lesson_count==1 ? 'lesson' : 'lessons'}} created.</div>
+                            <div class="mcard-sub-title-2">{{subject.approved_lessons}} {{subject.approved_lessons==1 ? 'lesson' : 'lessons'}} approved.</div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    
+    <app-teacher-right-sidebar></app-teacher-right-sidebar>
+    
+</div>
+
